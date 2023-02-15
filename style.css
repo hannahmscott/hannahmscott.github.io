@@ -1,0 +1,28 @@
+h1 {
+    font-family: "Gentium Book Basic", Courier New;
+    margin-left: 200px;
+    margin-top: 100px;
+}
+
+p {
+    font-family: "Gentium Book Basic", Courier New;
+    margin-left: 200px;
+    margin-right: 400px;
+}
+
+#one {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+a {
+    color: black;
+}
+
+#two {
+    text-decoration: none;
+}
+
+img {
+    margin-left: 200px;
+}
