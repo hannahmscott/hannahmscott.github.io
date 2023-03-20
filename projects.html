@@ -12,16 +12,31 @@
 <body>
     <h1><a id="two" href="index.html">Hannah<br>Scott</a></h1>
     <p id="one">Projects</p>
-    <button id="myBtn">Lines of Flight (2022)</button>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
-        </div>
+
+    <button type="button" class="collapsible">Lines of Flight (2022)</button>
+    <div class="content">
+      <img src="IMG_7142.JPG" style="padding-top:20px;width:600px;height:400px;">
+      <h2>Lines of Flight is an actively listening room where a stack of sensors, software, machine learning plugins, and cameras take in the subtle movements of bodies and the environmental conditions to form a kind of distributed instrument.</h2>
     </div>
+
     <script>
+
+        //Collapsible
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+
         // Get the modal
         var modal = document.getElementById("myModal");
         
