@@ -15,24 +15,31 @@ body {
   margin: 1rem;
   font-family: sans-serif;
   line-height: 1.5;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
 h1 {
     font-family: "Gentium Book Basic", Courier New;
-    padding-top: 100px;
-    padding-left: 200px;
+    padding-top: 50px;
+    padding-left: 0;
+    margin-left: 0;
 }
 
 p {
     font-family: "Gentium Book Basic", Courier New;
-    padding-left: 200px;
-    padding-right: 400px;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 800px;
 }
 
 #one {
     padding-top: 50px;
     padding-bottom: 0px;
-    padding-right: 700px;
+    padding-right: 0;
     color: green;
 }
 
@@ -51,7 +58,7 @@ a {
 }
 
 video {
-    padding-left: 200px;
+    padding-left: 0;
 }
 
 /* images and videos max out at full width */
@@ -62,11 +69,12 @@ video {
 }
 
 .portfolio-table {
-  width: calc(100% - 400px);  /* Adjust the width to account for the margin */
+  width: 100%;
   border-collapse: collapse;
-  margin-left: 200px; 
-  margin-right: 200px;
+  margin-left: 0; 
+  margin-right: 0;
   table-layout: fixed;
+  max-width: 800px;
 }
 
 .col-title { width: 50%; }
@@ -108,34 +116,120 @@ video {
   padding: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .row-link .col-title {
-  white-space: normal;  /* Allows wrapping */
-  word-wrap: break-word;  /* Breaks long words if necessary */
-  overflow: visible;  /* Shows all content */
+  white-space: normal;
+  word-wrap: break-word;
+  overflow: visible;
 }
 
-/* Styles for publication and date columns */
 .row-link .col-publication,
 .row-link .col-date {
-  white-space: nowrap;  /* Keeps these on one line */
+  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;  /* Adds ... if content is too long */
+  text-overflow: ellipsis;
 }
 
 .row-link .col-publication {
-  position: relative;  /* For pseudo-element positioning */
+  position: relative;
 }
 
 .row-link .col-publication::before {
   content: '';
   position: absolute;
   left: 0;
-  top: 10%;  /* Adjust as needed */
-  height: 80%;  /* Adjust as needed */
+  top: 10%;
+  height: 80%;
   width: 1px;
   background-color: white;
   opacity: .1;
 }
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  body {
+    padding: 2rem 4rem;
+  }
+  
+  h1 {
+    padding-top: 100px;
+    padding-left: 200px;
+  }
+
+  p {
+    padding-left: 200px;
+    padding-right: 400px;
+  }
+
+  #one {
+    padding-right: 700px;
+  }
+
+  video {
+    padding-left: 200px;
+  }
+
+  .portfolio-table {
+    width: calc(100% - 400px);
+    margin-left: 200px; 
+    margin-right: 200px;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  body {
+    padding: 1rem;
+  }
+  
+  h1 {
+    padding-top: 30px;
+    font-size: 1.8rem;
+  }
+
+  p {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #one {
+    padding-right: 0;
+    padding-top: 30px;
+  }
+
+  .portfolio-table {
+    font-size: 0.9rem;
+  }
+  
+  .col-title { width: 60%; }
+  .col-publication { width: 25%; }
+  .col-date { width: 15%; }
+  
+  .row-link span {
+    padding: 8px 4px;
+  }
+  
+  .row-link .col-date {
+    font-size: 0.8rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .portfolio-table {
+    font-size: 0.8rem;
+  }
+  
+  .col-title { width: 65%; }
+  .col-publication { width: 20%; }
+  .col-date { width: 15%; }
+  
+  .row-link span {
+    padding: 6px 2px;
+  }
+  
+  .row-link .col-publication,
+  .row-link .col-date {
+    font-size: 0.75rem;
+  }
