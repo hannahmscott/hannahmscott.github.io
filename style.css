@@ -15,9 +15,6 @@ body {
   margin: 1rem;
   font-family: sans-serif;
   line-height: 1.5;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
 }
 
 h1 {
@@ -74,7 +71,6 @@ video {
   margin-left: 0; 
   margin-right: 0;
   table-layout: fixed;
-  max-width: 800px;
 }
 
 .col-title { width: 50%; }
@@ -149,7 +145,8 @@ video {
 /* Desktop styles */
 @media (min-width: 768px) {
   body {
-    padding: 2rem 4rem;
+    max-width: none;
+    padding: 0;
   }
   
   h1 {
@@ -174,6 +171,7 @@ video {
     width: calc(100% - 400px);
     margin-left: 200px; 
     margin-right: 200px;
+    max-width: none;
   }
 }
 
@@ -233,3 +231,4 @@ video {
   .row-link .col-date {
     font-size: 0.75rem;
   }
+}
